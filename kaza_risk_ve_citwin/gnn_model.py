@@ -2,19 +2,6 @@ import torch
 import torch.nn.functional as F
 from torch_geometric.nn import HeteroConv, SAGEConv
 
-import json
-from pathlib import Path
-
-# Kodun çalıştığı ana klasörün yolunu alır
-BASE_DIR = Path(__file__).resolve().parent
-
-# konya_data.json dosyasının yolunu dinamik olarak belirler
-json_path = BASE_DIR / "konya_data.json"
-
-# JSON dosyasını okuma
-with open(json_path, "r", encoding="utf-8") as f:
-    data = json.load(f)
-
 class RiskPredictorGNN(torch.nn.Module):
     """
     Kaza Risk Tahmini Yapan Heterojen Graf Sinir Ağı Modeli.

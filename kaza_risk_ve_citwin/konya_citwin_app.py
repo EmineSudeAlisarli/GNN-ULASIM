@@ -7,7 +7,14 @@ import requests
 import json
 import pydeck as pdk
 
+from pathlib import Path
 
+# app.py'nin bulunduğu klasörü baz alır
+BASE_DIR = Path(__file__).resolve().parent
+file_path = BASE_DIR / "konya_data.json"
+
+with open(file_path, "r", encoding="utf-8") as f:
+    data = json.load(f)
 # ─────────────────────────────────────────────────────────────
 # PAGE CONFIG
 # ─────────────────────────────────────────────────────────────
